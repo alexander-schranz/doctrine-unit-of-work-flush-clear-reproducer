@@ -1,4 +1,4 @@
-# Reproduce
+# Reproducer that a clear is called twice if flush is called on event listener on postFlush
 
 Start Database:
 
