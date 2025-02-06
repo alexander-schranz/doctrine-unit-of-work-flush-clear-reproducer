@@ -35,3 +35,20 @@ Outputs:
 Expected:
 
 > OK: two customers added
+
+# Workaround
+
+Do not use `clear` method, I recommend following PHPStan rule:
+
+By using [https://github.com/spaze/phpstan-disallowed-calls](https://github.com/spaze/phpstan-disallowed-calls):
+
+```neon
+includes: # if no extension installer is used:
+    - vendor/spaze/phpstan-disallowed-calls/extension.neon
+parameters:
+    disallowedMethodCalls:
+        -
+            method: 'Doctrine\Common\Collections\Collection::clear()'
+            message: 'This is buggy see: https://github.com/doctrine/orm/issues/11827'
+            errorTip: 'use custom a customized replace method with removeElement and addElement'
+```
