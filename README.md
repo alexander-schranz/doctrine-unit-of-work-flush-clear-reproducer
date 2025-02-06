@@ -1,5 +1,7 @@
 # Reproducer that a clear is called twice if flush is called on event listener on postFlush
 
+Related issue: [https://github.com/doctrine/orm/issues/11827](https://github.com/doctrine/orm/issues/11827)
+
 Start Database:
 
 ```
